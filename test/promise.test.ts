@@ -405,7 +405,7 @@ describe('promise.then', () => {
     })
   })
 
-  it('2.2.7.4 如果 then 的第二个参数不是函数，且 promise 处于完成状态，那么返回与promise一样结果的promise2', (done) => {
+  it('2.2.7.4 如果 then 的第二个参数不是函数，且 promise 处于拒绝状态，那么返回与promise一样结果的promise2', (done) => {
     const promise = new __Promise((resolve: Function, reject: Function) => {
       reject('fail')
     })
