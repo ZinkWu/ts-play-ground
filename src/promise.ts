@@ -19,6 +19,7 @@ class __Promise {
             x = callback.call(undefined, this.result)
           } catch (e) {
             this.prepare.reject(e)
+            return
           }
           this.prepare.resolveWith(x)
         } else {
@@ -32,6 +33,7 @@ class __Promise {
     if (this.state !== 'pending') return
     this.state = 'rejected'
     this.result = reason
+    
 
     process.nextTick(() => {
       this.rejectCallbacks.forEach(callback => {
